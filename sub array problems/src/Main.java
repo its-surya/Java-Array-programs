@@ -12,9 +12,8 @@ public class Main {
             a[i] = sc.nextInt();
         }
         for (int i = 0; i < a.length; i++) {
-            for (int j = i; j < a.length; j++) {
-                System.out.println();
-                for (int k = i; k < j; k++) {
+            for (int j = i; j < a.length; j++){
+                for (int k = i; k <= j; k++) {
                     System.out.print(a[k] + "\t");
                 }
                 System.out.println();
