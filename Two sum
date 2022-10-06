@@ -1,0 +1,38 @@
+/*
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+-----------------------------------------------------------------------------------------------------------------------------------
+test case:1
+Input: nums = [3,2,4], target = 6
+Output: [1,2]
+
+test case:2
+Input: nums = [3,3], target = 6
+Output: [0,1]
+
+test case:3
+Input: nums = [2,7,11,15], target = 9
+Output: [0,1]
+-----------------------------------------------------------------------------------------------------------------------------------------
+Constraints:
+
+ *  2 <= nums.length <= 104
+ *  -109 <= nums[i] <= 109
+ *  -109 <= target <= 109
+
+*/
+
+
+class Solution {
+public  int[] twoSum(int[] nums, int target) {
+    for (int i = 0; i < nums.length; i++) {
+        for (int j =  i+1; j < nums.length; j++) { // checking for one element after i.
+            if (nums[j] == target - nums[i]) {
+                return new int[] { i, j };
+            }
+        }
+    }
+    throw new IllegalArgumentException("No two sum solution");// exception if the user entrer a Value i.e Wrong, Example if user enter a string, he will get this.
+}
+}
